@@ -58,7 +58,7 @@ func NewProxy(targetURL string) (*httputil.ReverseProxy, error) {
 }
 
 func handleRequest(w http.ResponseWriter, r *http.Request) {
-	log.Printf("Received request for: %s", r.URL.Path)
+	log.Printf("Received request for: %s", r.URL)
 
 	var targetProxy *httputil.ReverseProxy
 	var err error
