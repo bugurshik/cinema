@@ -1,0 +1,33 @@
+@startuml Cinemaabys - containers
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+Person(user, "Пользователь", "")
+
+Boundary(api_system, "Cinemaabys", "System") {
+    Container(auth_service, "Auth Service", Go, "Сервис аутентификации")
+    Container(gateway, "API Gateway", Istio, "Единая точка входа для всех API")
+    Container(user_service, "User Service", Go, "Сервис пользователей")
+    Container(payment_service, "Payment Service", Go, "Сервис пользователей")
+    Container(sub_service, "Subscription Service", Go, "Сервис подписок пользователей")
+    Container(movies_service, "Movies Service", Go, "Информация о фильмах")
+}
+
+System_Ext(ext_payment_system, "Система оплаты", "")
+System_Ext(recomendation_system,  "Система подбора рекомендаций", "")
+
+Rel_R(gateway, auth_service, "")
+Lay_R(gateway, auth_service)
+
+Rel(user, gateway, "")
+Rel(gateway, user_service, "")
+Rel(gateway, payment_service, "")
+Rel(gateway, sub_service, "")
+Rel(gateway, movies_service, "")
+
+Rel(movies_service, recomendation_system, "")
+Rel(payment_service, ext_payment_system, "")
+
+Rel_R(payment_service, sub_service, "")
+Lay_R(payment_service, sub_service)
+
+@enduml
