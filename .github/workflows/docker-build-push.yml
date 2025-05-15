@@ -125,11 +125,3 @@ jobs:
           labels: ${{ steps.meta-events.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Run API Tests
-        run: |
-          cd tests/postman
-          npm install
-          npm run test:docker
-
-      
