@@ -28,9 +28,17 @@ spec:
         - containerPort: 8000
         env:
         - name: PORT
-          value: "8082"
-        - name: KAFKA_BROKERS
-          value: "kafka:9092"
+          value: "8000"
+        - name: MONOLITH_URL
+          value: "http://monolith:8080"
+        - name: MOVIES_SERVICE_URL
+          value: "http://movies-service:8081"
+        - name: EVENTS_SERVICE_URL
+          value: "http://events-service:8082"
+        - name: GRADUAL_MIGRATION
+          value: false
+        - name: MOVIES_MIGRATION_PERCENT
+          value: 50
         envFrom:
         - configMapRef:
             name: cinemaabyss-config
