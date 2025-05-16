@@ -36,9 +36,9 @@ spec:
         - name: EVENTS_SERVICE_URL
           value: "http://events-service:8082"
         - name: GRADUAL_MIGRATION
-          value: false
+          value: "false"
         - name: MOVIES_MIGRATION_PERCENT
-          value: 50
+          value: "50"
         envFrom:
         - configMapRef:
             name: cinemaabyss-config
@@ -51,8 +51,6 @@ spec:
           requests:
             cpu: "100m"
             memory: "128Mi"
-          initialDelaySeconds: 15
-          periodSeconds: 20
       restartPolicy: Always
       imagePullSecrets:
         - name: dockerconfigjson
