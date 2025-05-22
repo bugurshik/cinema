@@ -283,7 +283,7 @@ cat .docker/config.json | base64
 Добавьте 2 скриншота: 
 1) вывода при вызове https://cinemaabyss.example.com/api/movies;
 
-![вывод event-service после тестов](movees-browser-screen.png)
+![вывод movies](movees-browser-screen.png)
 
 2) вывода event-service после тестов.
 
