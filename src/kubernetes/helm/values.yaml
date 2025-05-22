@@ -68,6 +68,12 @@ proxyService:
     port: 80
     targetPort: 8000
     type: ClusterIP
+  env:
+    monolithUrl: http://monolith:8080
+    moviesServiceUrl: http://movies-service:8081
+    eventsServiceUrl: http://events-service:8082
+    gradualMigration: false
+    moviesMigrationPercent: 50
 
 # Movies service configuration
 moviesService:

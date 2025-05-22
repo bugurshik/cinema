@@ -16,7 +16,7 @@ spec:
       maxSurge: 1
       maxUnavailable: 0
   template:
-    metadata:
+    metadata: 
       labels:
         app: proxy-service
     spec:

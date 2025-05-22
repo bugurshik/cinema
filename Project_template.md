@@ -365,6 +365,7 @@ minikube tunnel
 После чего вызовите:
 https://cinemaabyss.example.com/api/movies
 
+![screen](apply-helm-screen.png)
 
 # Задание 5 
 Компания КиноБездна планирует активно развиваться. Перед вами стоит задача – повысить надежность и безопасность реализации сетевых паттернов типа Circuit Breaker и канареечного деплоя. Для этого вам нужно развернуть istio и настроить circuit breaker для monolith и movies сервисов.
