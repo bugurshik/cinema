@@ -412,6 +412,12 @@ cluster.outbound|8081||movies-service.cinemaabyss.svc.cluster.local;.upstream_rq
 
 Делаем скриншот тестирования и прикладываем к работе
 
+Вывод fortio
+![screen](fortio-result.png)
+
+Статистика
+![screen](istio-stats.png)
+
 ## Удаляем все
 
 Установите https://istio.io/latest/docs/reference/commands/istioctl/
